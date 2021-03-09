@@ -19,16 +19,16 @@ public class Mutation implements Pipeline {
                     Square s = (Square) x;
                     return new Circle(
                         s.getColor(),
-                        s.X() + s.getWidth() / 2,
-                        s.Y() + s.getHeight() / 2,
+                        s.X(),
+                        s.Y(),
                         s.getHeight() / 2
                     );
                 } else {
                     Circle c = (Circle) x;
                     return new Square(
                             c.getColor(),
-                            c.X() + c.ray,
-                            c.Y() + c.ray,
+                            c.X(),
+                            c.Y(),
                             c.ray * 2,
                             c.ray * 2
                     );

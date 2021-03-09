@@ -35,7 +35,9 @@ public abstract class Shape {
         return height;
     }
 
-    public abstract double area();
+    public double area() {
+        return getHeight() * getWidth();
+    }
 
     @Override
     public String toString() {
