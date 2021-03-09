@@ -1,0 +1,7 @@
+cercle@1
+rectangle@2
+cercle@3
+rectangle@0
+cercle@5
+cercle@7
+rectangle@8
