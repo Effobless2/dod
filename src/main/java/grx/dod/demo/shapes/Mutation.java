@@ -2,7 +2,7 @@ package grx.dod.demo.shapes;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Mutation implements Pipeline {
+public class Mutation implements Pipeline<List<Shape>> {
     Class c;
 
     public Mutation(Class c) {
