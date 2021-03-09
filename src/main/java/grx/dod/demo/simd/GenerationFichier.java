@@ -10,7 +10,7 @@ public class GenerationFichier {
 
 	String chemin;
 	
-	GenerationFichier(String chemin) {
+	public GenerationFichier(String chemin) {
 		this.chemin = chemin;
 	}
 	
