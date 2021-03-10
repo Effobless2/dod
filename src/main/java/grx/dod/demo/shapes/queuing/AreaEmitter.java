@@ -1,4 +1,7 @@
-package grx.dod.demo.shapes;
+package grx.dod.demo.shapes.queuing;
+
+import grx.dod.demo.shapes.model.Shape;
+import grx.dod.demo.shapes.model.ShapeCalculator;
 
 import java.util.Iterator;
 import java.util.List;
@@ -10,7 +13,7 @@ public class AreaEmitter implements Pipeline<Double> {
         double result = 0;
         while (it.hasNext()) {
             Shape s = (Shape) it.next();
-            result += s.area();
+            result += ShapeCalculator.area(s);
         }
         return result;
     }

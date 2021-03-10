@@ -1,4 +1,6 @@
-package grx.dod.demo.shapes;
+package grx.dod.demo.shapes.queuing;
+
+import grx.dod.demo.shapes.model.Shape;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package grx.dod.demo.shapes;
+package grx.dod.demo.shapes.model;
 
 public class Circle extends Shape {
     int ray;
@@ -6,11 +6,6 @@ public class Circle extends Shape {
     public Circle(String color, int x, int y, int ray) {
         super(color, x, y, ray * 2, ray * 2);
         this.ray = ray;
-    }
-
-    @Override
-    public double area() {
-        return Math.PI * Math.pow(this.ray, 2);
     }
 
     @Override

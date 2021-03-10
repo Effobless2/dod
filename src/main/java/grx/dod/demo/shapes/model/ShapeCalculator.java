@@ -1,18 +1,23 @@
-package grx.dod.demo.shapes;
+package grx.dod.demo.shapes.model;
+
+import grx.dod.demo.shapes.model.Shape;
 
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
-public class SpaceEmitter implements Pipeline<Integer> {
-    @Override
-    public Integer output(List<Shape> input) {
+public class ShapeCalculator {
+    public static double area(Shape s) {
+        return s.getHeight() * s.getWidth();
+    }
+
+    public static double area(List<Shape> input) {
         if (input.size() == 0)
             return 0;
-        Optional<Integer> minX = Optional.ofNullable(null);
-        Optional<Integer> minY = Optional.ofNullable(null);
-        Optional<Integer> maxX = Optional.ofNullable(null);
-        Optional<Integer> maxY = Optional.ofNullable(null);
+        Optional<Integer> minX = Optional.empty();
+        Optional<Integer> minY = Optional.empty();
+        Optional<Integer> maxX = Optional.empty();
+        Optional<Integer> maxY = Optional.empty();
 
         Iterator<Shape> it = input.iterator();
         while (it.hasNext()) {

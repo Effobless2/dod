@@ -1,4 +1,4 @@
-package grx.dod.demo.shapes;
+package grx.dod.demo.shapes.model;
 
 public abstract class Shape {
     private int x;
@@ -33,10 +33,6 @@ public abstract class Shape {
 
     public int getHeight() {
         return height;
-    }
-
-    public double area() {
-        return getHeight() * getWidth();
     }
 
     @Override

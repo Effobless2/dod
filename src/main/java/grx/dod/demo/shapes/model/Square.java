@@ -1,14 +1,11 @@
-package grx.dod.demo.shapes;
+package grx.dod.demo.shapes.model;
+
+import grx.dod.demo.shapes.model.Shape;
 
 public class Square extends Shape {
 
     public Square(String color, int x, int y, int width, int height) {
         super(color, x, y, width, height);
-    }
-
-    @Override
-    public double area() {
-        return getWidth() * getHeight();
     }
 
     @Override
