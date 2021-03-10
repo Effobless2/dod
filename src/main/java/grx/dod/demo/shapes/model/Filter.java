@@ -1,7 +1,5 @@
 package grx.dod.demo.shapes.model;
 
-import grx.dod.demo.shapes.model.Shape;
-
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;

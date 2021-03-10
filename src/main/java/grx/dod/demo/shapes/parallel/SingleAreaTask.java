@@ -4,8 +4,6 @@ import grx.dod.demo.shapes.model.Shape;
 import grx.dod.demo.shapes.model.ShapeCalculator;
 
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class SingleAreaTask implements Callable<Double> {
     Shape shape;

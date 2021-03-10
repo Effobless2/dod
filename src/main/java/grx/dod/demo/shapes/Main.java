@@ -20,12 +20,12 @@ public class Main {
         shapes.add(new Circle("red", 1,2,4));
         shapes.add(new Circle("green", 18,11,2));
         shapes.add(new Circle("blue", 5,4,5));
-        shapes.add(new Square("black", 1,2,4, 15));
-        shapes.add(new Square("purple", 148,123,8, 10));
+        shapes.add(new Rectangle("black", 1,2,4, 15));
+        shapes.add(new Rectangle("purple", 148,123,8, 10));
 
         System.out.println("===== QUEUING =====");
-        System.out.println(new AreaEmitter().output(new TransformEmitter(new Transform(Square.class)).output(shapes)));
-        System.out.println(new SpaceEmitter().output(new TransformEmitter(new Transform(Square.class)).output(shapes)));
+        System.out.println(new AreaEmitter().output(new TransformEmitter(new Transform(Rectangle.class)).output(shapes)));
+        System.out.println(new SpaceEmitter().output(new TransformEmitter(new Transform(Rectangle.class)).output(shapes)));
         System.out.println(Filter.filter(shapes, Circle.class::isInstance));
         System.out.println("==================");
 

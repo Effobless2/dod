@@ -11,8 +11,8 @@ public class Transform {
         if (c.isInstance(shape)) {
             return shape;
         } else {
-            if (shape instanceof Square) {
-                Square s = (Square) shape;
+            if (shape instanceof Rectangle) {
+                Rectangle s = (Rectangle) shape;
                 return new Circle(
                         s.getColor(),
                         s.X(),
@@ -21,7 +21,7 @@ public class Transform {
                 );
             } else {
                 Circle c = (Circle) shape;
-                return new Square(
+                return new Rectangle(
                         c.getColor(),
                         c.X(),
                         c.Y(),

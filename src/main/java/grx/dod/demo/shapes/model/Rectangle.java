@@ -1,10 +1,8 @@
 package grx.dod.demo.shapes.model;
 
-import grx.dod.demo.shapes.model.Shape;
+public class Rectangle extends Shape {
 
-public class Square extends Shape {
-
-    public Square(String color, int x, int y, int width, int height) {
+    public Rectangle(String color, int x, int y, int width, int height) {
         super(color, x, y, width, height);
     }
 

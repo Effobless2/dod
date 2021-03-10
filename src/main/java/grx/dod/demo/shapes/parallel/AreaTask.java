@@ -1,7 +1,7 @@
 package grx.dod.demo.shapes.parallel;
 
 import grx.dod.demo.shapes.model.Shape;
-import grx.dod.demo.shapes.model.Square;
+import grx.dod.demo.shapes.model.Rectangle;
 import grx.dod.demo.shapes.model.Transform;
 
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class AreaTask implements Callable<Double> {
                 processeur.submit(
                     new TransformTask(
                         shape,
-                        new Transform(Square.class)
+                        new Transform(Rectangle.class)
                     )
                 )
             );
