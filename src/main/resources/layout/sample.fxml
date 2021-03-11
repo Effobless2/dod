@@ -37,6 +37,7 @@
                <String fx:value="Cercle" />
             </value>
          </ComboBox>
+
          <TextField id="color" fx:id="color" promptText="Couleur"/>
          <TextField id="posX" fx:id="posX" promptText="Position X"/>
          <TextField id="posY" fx:id="posY" promptText="Position Y"/>
