@@ -1,21 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 
-
-<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="grx.dod.demo.shapes.jfx.Controller">
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.geometry.Insets?>
+<GridPane alignment="center" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="grx.dod.demo.shapes.jfx.Controller">
    <rowConstraints>
-      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER"/>
-      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER"/>
-      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER"/>
+      <RowConstraints valignment="center"/>
    </rowConstraints>
    <columnConstraints>
-      <ColumnConstraints minWidth="10.0" prefWidth="100.0" halignment="center"/>
-      <ColumnConstraints minWidth="10.0" prefWidth="100.0" halignment="center"/>
-      <ColumnConstraints minWidth="10.0" prefWidth="100.0" halignment="center"/>
+      <ColumnConstraints minWidth="504" halignment="center"/>
+      <ColumnConstraints minWidth="216" halignment="center"/>
    </columnConstraints>
    <children>
-      <Button mnemonicParsing="false" text="Button"  GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+      <Canvas GridPane.columnIndex="0" GridPane.rowIndex="0" ></Canvas>
+      <VBox GridPane.rowIndex="0" GridPane.columnIndex="1" spacing="5"  style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid;" minHeight="480">
+         <padding>
+            <Insets top="10" bottom="10" left="10" right="10"></Insets>
+         </padding>
+         <ComboBox  fx:id="cb" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <items>
+               <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Cercle" />
+                  <String fx:value="Rectangle" />
+               </FXCollections>
+            </items>
+            <value>
+               <String fx:value="Cercle" />
+            </value>
+         </ComboBox>
+         <TextField id="color" fx:id="color" promptText="Couleur"/>
+         <TextField id="posX" fx:id="posX" promptText="Position X"/>
+         <TextField id="posY" fx:id="posY" promptText="Position Y"/>
+         <TextField id="ray" fx:id="ray" promptText="Rayon"/>
+         <TextField id="widthRec" fx:id="widthRec" promptText="Largeur"/>
+         <TextField id="heightRec" fx:id="heightRec" promptText="Hauteur"/>
+
+         <Button layoutX="126" layoutY="90" text="Dessiner" fx:id="btnDraw" />
+      </VBox>
    </children>
 </GridPane>
