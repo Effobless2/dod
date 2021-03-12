@@ -2,7 +2,7 @@ package grx.dod.demo.shapes.model;
 
 public class Rectangle extends Shape {
 
-    public Rectangle(String color, int x, int y, int width, int height) {
+    public Rectangle(String color, Double x, Double y, Double width, Double height) {
         super(color, x, y, width, height);
     }
 

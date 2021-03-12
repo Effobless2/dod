@@ -1,13 +1,13 @@
 package grx.dod.demo.shapes.model;
 
 public abstract class Shape {
-    private int x;
-    private int y;
-    private int width;
-    private int height;
+    private Double x;
+    private Double y;
+    private Double width;
+    private Double height;
     private String color;
 
-    public Shape(String color, int x, int y, int width, int height) {
+    public Shape(String color, Double x, Double y, Double width, Double height) {
         this.color = color;
         this.x = x;
         this.y = y;
@@ -19,19 +19,19 @@ public abstract class Shape {
         return color;
     }
 
-    public int X(){
+    public Double X(){
         return x;
     }
 
-    public int Y() {
+    public Double Y() {
         return y;
     }
 
-    public int getWidth() {
+    public Double getWidth() {
         return width;
     }
 
-    public int getHeight() {
+    public Double getHeight() {
         return height;
     }
 

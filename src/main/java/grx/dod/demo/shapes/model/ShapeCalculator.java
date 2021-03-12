@@ -14,10 +14,10 @@ public class ShapeCalculator {
     public static double area(List<Shape> input) {
         if (input.size() == 0)
             return 0;
-        Optional<Integer> minX = Optional.empty();
-        Optional<Integer> minY = Optional.empty();
-        Optional<Integer> maxX = Optional.empty();
-        Optional<Integer> maxY = Optional.empty();
+        Optional<Double> minX = Optional.empty();
+        Optional<Double> minY = Optional.empty();
+        Optional<Double> maxX = Optional.empty();
+        Optional<Double> maxY = Optional.empty();
 
         Iterator<Shape> it = input.iterator();
         while (it.hasNext()) {

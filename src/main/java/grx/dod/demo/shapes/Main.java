@@ -17,11 +17,11 @@ public class Main {
 
         List<Shape> shapes = new ArrayList<>();
 
-        shapes.add(new Circle("red", 1,2,4));
-        shapes.add(new Circle("green", 18,11,2));
-        shapes.add(new Circle("blue", 5,4,5));
-        shapes.add(new Rectangle("black", 1,2,4, 15));
-        shapes.add(new Rectangle("purple", 148,123,8, 10));
+        shapes.add(new Circle("red", 1d,2d,4d));
+        shapes.add(new Circle("green", 18d,11d,2d));
+        shapes.add(new Circle("blue", 5d,4d,5d));
+        shapes.add(new Rectangle("black", 1d,2d,4d, 15d));
+        shapes.add(new Rectangle("purple", 148d,123d,8d, 10d));
 
         System.out.println("===== QUEUING =====");
         System.out.println(new AreaEmitter().output(new TransformEmitter(new Transform(Rectangle.class)).output(shapes)));

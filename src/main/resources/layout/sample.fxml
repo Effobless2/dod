@@ -21,7 +21,10 @@
       <ColumnConstraints minWidth="216" halignment="center"/>
    </columnConstraints>
    <children>
-      <Canvas GridPane.columnIndex="0" GridPane.rowIndex="0" ></Canvas>
+      <VBox GridPane.rowIndex="0" GridPane.columnIndex="0">
+         <Canvas fx:id="canvasShapes" width="500" height="390"></Canvas>
+      </VBox>
+
       <VBox GridPane.rowIndex="0" GridPane.columnIndex="1" spacing="5"  style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid;" minHeight="480">
          <padding>
             <Insets top="10" bottom="10" left="10" right="10"></Insets>
@@ -38,7 +41,20 @@
             </value>
          </ComboBox>
 
-         <TextField id="color" fx:id="color" promptText="Couleur"/>
+         <ComboBox  fx:id="color" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <items>
+               <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Rouge" />
+                  <String fx:value="Bleu" />
+                  <String fx:value="Vert" />
+                  <String fx:value="Jaune" />
+               </FXCollections>
+            </items>
+            <value>
+               <String fx:value="Rouge" />
+            </value>
+         </ComboBox>
+
          <TextField id="posX" fx:id="posX" promptText="Position X"/>
          <TextField id="posY" fx:id="posY" promptText="Position Y"/>
          <TextField id="ray" fx:id="ray" promptText="Rayon"/>
