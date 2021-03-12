@@ -1,7 +1,5 @@
 package grx.dod.demo.shapes.model;
 
-import grx.dod.demo.shapes.model.Shape;
-
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
@@ -28,11 +26,11 @@ public class ShapeCalculator {
             if(!minY.isPresent() || minY.get() > s.Y() ) {
                 minY = Optional.of(s.Y());
             }
-            if(!maxY.isPresent() || maxY.get() < s.Y() ) {
-                maxY = Optional.of(s.Y());
+            if(!maxY.isPresent() || maxY.get() < s.Y() + s.getHeight()) {
+                maxY = Optional.of(s.Y() + s.getHeight());
             }
-            if(!maxX.isPresent() || maxX.get() < s.X() ) {
-                maxX = Optional.of(s.X());
+            if(!maxX.isPresent() || maxX.get() < s.X() + s.getWidth()) {
+                maxX = Optional.of(s.X() + s.getWidth());
             }
         }
         return (maxX.get() - minX.get()) * (maxY.get() - minY.get());
