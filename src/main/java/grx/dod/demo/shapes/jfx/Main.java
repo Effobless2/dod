@@ -3,6 +3,8 @@ package grx.dod.demo.shapes.jfx;
 import grx.dod.demo.shapes.model.Circle;
 import grx.dod.demo.shapes.model.Rectangle;
 import grx.dod.demo.shapes.model.Shape;
+import grx.dod.demo.shapes.parallel.AreaTask;
+import grx.dod.demo.shapes.parallel.SpaceTask;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -15,19 +17,22 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 
 public class Main extends Application {
 
     Stage primaryStage;
     Button btnDraw;
-    TextField textFieldColor;
     TextField textFieldRay;
     TextField textFieldPosX;
     TextField textFieldPosY;
@@ -37,9 +42,11 @@ public class Main extends Application {
     ComboBox<String> comboBoxColor;
     List<Shape> shapes = new ArrayList<>();
     GraphicsContext gc;
+    Label shapeAreaLabel;
+    Label totalAreaLabel;
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         this.primaryStage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("/layout/sample.fxml"));
         primaryStage.setTitle("Hello World");
@@ -58,9 +65,11 @@ public class Main extends Application {
         textFieldPosY = (TextField) root.lookup("#posY");
         textFieldWR = (TextField) root.lookup("#widthRec");
         textFieldHR = (TextField) root.lookup("#heightRec");
+
         comboBox = (ComboBox<String>) root.lookup("#cb");
         comboBoxColor = (ComboBox<String>) root.lookup("#color");
-
+        shapeAreaLabel = (Label) root.lookup("#shapeAreaLabel");
+        totalAreaLabel = (Label) root.lookup("#totalAreaLabel");
         textFieldRay.textProperty().addListener(getListener(textFieldRay));
         textFieldPosX.textProperty().addListener(getListener(textFieldPosX));
         textFieldPosY.textProperty().addListener(getListener(textFieldPosY));
@@ -88,6 +97,7 @@ public class Main extends Application {
                 }
                 shapes.add(shape);
                 drawShapes(shape);
+                updateLabels();
             }
         });
 
@@ -109,6 +119,19 @@ public class Main extends Application {
 
     }
 
+    private void updateLabels() {
+        double totalArea = 0d;
+        double shapeArea = 0d;
+        try {
+            shapeArea = new AreaTask(shapes).call();
+            totalArea = new SpaceTask(shapes).call();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        totalAreaLabel.setText(totalArea + "px");
+        shapeAreaLabel.setText(shapeArea + "px");
+    }
+
     private ChangeListener<String> getListener(TextField textField){
         return new ChangeListener<String>() {
             @Override
@@ -121,7 +144,6 @@ public class Main extends Application {
     }
 
     private void drawShapes(Shape shape) {
-
         if (comboBoxColor.getValue().equals("Rouge")){
             gc.setFill(Color.RED);
         }else if(comboBoxColor.getValue().equals("Bleu")){
