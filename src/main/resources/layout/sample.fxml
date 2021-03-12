@@ -49,7 +49,7 @@
             </value>
          </ComboBox>
 
-         <ComboBox  fx:id="color" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <ComboBox fx:id="color">
             <items>
                <FXCollections fx:factory="observableArrayList">
                   <String fx:value="Rouge" />
@@ -68,7 +68,17 @@
          <TextField id="ray" fx:id="ray" promptText="Rayon"/>
          <TextField id="widthRec" fx:id="widthRec" promptText="Largeur"/>
          <TextField id="heightRec" fx:id="heightRec" promptText="Hauteur"/>
-
+         <ComboBox fx:id="comboProcess">
+            <items>
+               <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="asynchrone" />
+                  <String fx:value="queueing" />
+               </FXCollections>
+            </items>
+            <value>
+               <String fx:value="asynchrone" />
+            </value>
+         </ComboBox>
          <Button layoutX="126" layoutY="90" text="Dessiner" fx:id="btnDraw" />
       </VBox>
    </children>
